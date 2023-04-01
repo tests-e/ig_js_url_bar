@@ -1,27 +1,12 @@
 <html>
 <body>
-<a href="#" onclick="op()"> Click</click>
+<p>JavaScript openWindow functionality</p>
+<button onclick="sample()">Click here</button>
 <script>
-function op(){
-const winHtml = `<!DOCTYPE html>
-    <html>
-        <head>
-            <title>Window with Blob</title>
-        </head>
-        <body>
-            <h1>Hello from the new window!</h1>
-        </body>
-    </html>`;
-
-const winUrl = URL.createObjectURL(
-    new Blob([winHtml], { type: "text/html" })
-);
-
-const win = window.open(
-    winUrl,
-    "win",
-    `width=800,height=400,screenX=200,screenY=200`
-);
+function sample() {
+var myWindow = window.open("", "emptyWindow", "width=250,height=200");
+myWindow.document.write("<p>you have entered into a new window with empty URL</p>");
+myWindow.opener.document.write("<p>Original Window</p>");
 }
 </script>
 </body>
